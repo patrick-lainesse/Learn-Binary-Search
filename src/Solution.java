@@ -5,21 +5,20 @@ public class Solution {
 
         int left = 1;
         int right = x-1;
-        int middle = -1;
+        long middle = -1;
 
         if(x == 1 || x == 0) return x;
         while(left<= right) {
-            // int mid = left + (right - left) / 2;
-            //middle = (left + right) / 2;
             middle = left + (right - left) / 2;
             if(middle*middle < x) {
-                left = middle + 1;
+                left = (int) (middle + 1);
             } else if(middle*middle > x) {
-                right = middle - 1;
-            } else return middle;
+                right = (int) (middle - 1);
+            } else return (int) middle;
         }
-        if(middle*middle>x) return middle-1;
-        return middle;
+        if(middle*middle>x) return (int) (middle-1);
+
+        return (int) middle;
     }
 
     // Introduction
